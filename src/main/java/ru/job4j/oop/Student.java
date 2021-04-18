@@ -3,7 +3,6 @@ package ru.job4j.oop;
 /**
  * petya.music();Вызываем метод music(),
  * используя переменную petya объекта класса Student.
- *
  */
 
 public class Student {
@@ -12,12 +11,12 @@ public class Student {
         System.out.println("Tra tra tra");
     }
 
-    public void song(){
+    public void song() {
         System.out.println("I believe I can fly");
     }
 
     public static void main(String[] args) {
-        Student petya = new Student();//объект student
+        Student petya = new Student(); //объект student
         petya.music();
         petya.music();
         petya.music();

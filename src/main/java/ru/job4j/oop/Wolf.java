@@ -4,12 +4,12 @@ package ru.job4j.oop;
  * Когда мы создаем новый класс, то мы создаем новый тип данных.
  * Переменные новых типов данных можно принимать, как аргументы методов,
  * можно возвращать, как результат вычисления метода.
- *
  */
 public class Wolf {
-    public void eat(Girl girl) {//Волк может съесть Красную шапочку.
+    public void eat(Girl girl) { //Волк может съесть Красную шапочку.
     }
-    public void tryEat(Ball ball){
+
+    public void tryEat(Ball ball) {
 
     }
 }

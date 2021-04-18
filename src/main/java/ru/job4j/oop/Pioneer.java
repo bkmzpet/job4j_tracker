@@ -6,7 +6,7 @@ package ru.job4j.oop;
  * Этот новый тип данных можно принимать как параметр, возвращать как параметр.
  */
 public class Pioneer {
-    public void kill(Wolf wolf) {//Петя может убить Волка.
+    public void kill(Wolf wolf) { //Петя может убить Волка.
     }
 }
 

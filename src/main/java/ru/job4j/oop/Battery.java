@@ -4,7 +4,6 @@ package ru.job4j.oop;
  * public void exchange(Battery another)
  * Этот метод должен списывать заряд из батареи
  * у кого вызывали метод exchange и добавить к объекту another.
- *
  */
 public class Battery {
     private int load;
