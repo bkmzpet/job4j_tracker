@@ -9,10 +9,7 @@ public class StartUI {
         Tracker tracker = new Tracker();
         Item bug = new Item("fdg");
         tracker.add(bug);
-        System.out.println( tracker.findById(1));
-
-
-
+        System.out.println(tracker.findById(1));
 
     }
 }
