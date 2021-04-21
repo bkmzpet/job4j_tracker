@@ -57,13 +57,10 @@ public class Tracker {
             if (item != null) {
                 findAll[j] = item;
                 j++;
+                break;
             }
         }
         return findAll[j];
-        /**
-         * возвращает копию
-         * массива items без null элементов (без пустых ячеек).
-         */
     }
 
 
