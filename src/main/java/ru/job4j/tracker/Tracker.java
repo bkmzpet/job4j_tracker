@@ -1,24 +1,30 @@
 package ru.job4j.tracker;
 /**
- * Метод public Item[] findByName(String key) проверяет в цикле все элементы массива items, сравнивая name
- * (используя метод getName класса Item) с аргументом метода String key. Элементы, у которых совпадает name,
- * копирует в результирующий массив и возвращает его. Алгоритм этого метода аналогичен методу findAll.
+ * добавление заявок - public Item add(Item item);
+ * получение списка всех заявок - public Item[] findAll();
+ * получение списка по имени - public Item[] findByName(String key);
+ * получение заявки по id - public Item findById(int id);
+ * Item[] items = new Item[100] содержит возможное количество заявлений.
  */
 
 import java.util.Arrays;
 
 public class Tracker {
-    private final Item[] items = new Item[100];
-    private int ids = 1;
+    private final Item[] items = new Item[100]; // количество заявлений
+    private int ids = 1;//Поле ids используется для генерации нового ключа
     private int size = 0;
 
-    public Item add(Item item) {
-        item.setId(ids++);
-        items[size++] = item;
+    public Item add(Item item) { // добавление заявок
+        item.setId(ids++); // добавляем к объекту id
+        items[size++] = item;// записываем в массив объект item
         return item;
+        /**
+         * В методе add нужно проставить уникальный ключ в объект Item item.
+         * Это нужно сделать через метод setId.
+         */
     }
 
-    public Item[] findByName(String key) { //
+    public Item[] findByName(String key) { //получение списка по имени
         Item[] findByName = new Item[items.length];
         int j = 0;
         for (int index = 0; index < size; index++) {
@@ -31,7 +37,7 @@ public class Tracker {
         return Arrays.copyOf(findByName, j);
     }
 
-    public Item findById(int id) {
+    public Item findById(int id) { //получение заявки по id
         Item rsl = null;
         for (int index = 0; index < size; index++) {
             Item item = items[index];
@@ -43,7 +49,7 @@ public class Tracker {
         return rsl;
     }
 
-    public Item findAll() {
+    public Item findAll() { //получение списка всех заявок
         Item[] findAll = new Item[items.length];
         int j = 0;
         for (int index = 0; index < size; index++) {
@@ -54,7 +60,13 @@ public class Tracker {
             }
         }
         return findAll[j];
+        /**
+         * возвращает копию
+         * массива items без null элементов (без пустых ячеек).
+         */
     }
+
+
 }
 
 
