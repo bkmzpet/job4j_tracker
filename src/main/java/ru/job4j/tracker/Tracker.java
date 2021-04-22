@@ -61,7 +61,7 @@ public class Tracker {
 
     public boolean replace(int id, Item item) { // метод добавить и искать заявки
         int index = indexOf(id);
-        if (findById(id) != null) {
+        if (index != -1) {
             item.setId(id); //
             items[index] = item;
 
