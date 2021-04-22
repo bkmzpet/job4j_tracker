@@ -60,9 +60,10 @@ public class Tracker {
     }
 
     public boolean replace(int id, Item item) { // метод добавить и искать заявки
+        int index = indexOf(id);
         if (findById(id) != null) {
             item.setId(id); //
-            items[size] = item;
+            items[index] = item;
 
         }
         return true;
