@@ -3,26 +3,21 @@ package ru.job4j.tracker;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Item {
-    private int id;
-    private String name;
-    private LocalDateTime created = LocalDateTime.now();
+public class Item { //Класс Item описывает модель заявления.
+    private int id; //это уникальный номер заявления.
+    private String name; //содержит название заявления.
 
-    public Item() {
+    public Item() { //Пустой конструктор
 
     }
 
-    public Item(String name) {
+    public Item(String name) { // Конуструктор имя
         this.name = name;
     }
 
-    public Item(String name, int id) {
+    public Item(String name, int id) { // Конуструктор имя и айди
         this.name = name;
         this.id = id;
-    }
-
-    public LocalDateTime getCreated() {
-        return created;
     }
 
     public int getId() {
@@ -41,8 +36,4 @@ public class Item {
         this.name = name;
     }
 
-    public static void main(String[] args) {
-        LocalDateTime currentDateTime = LocalDateTime.now();
-        System.out.println("Текущие дата и время до форматирования: " + currentDateTime);
-    }
 }

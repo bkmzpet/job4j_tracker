@@ -16,7 +16,7 @@ public class Tracker {
 
     public Item add(Item item) { // добавление заявок
         item.setId(ids++); // добавляем к объекту id
-        items[size++] = item;// записываем в массив объект item
+        items[size++] = item; // записываем в массив объект item
         return item;
         /**
          * В методе add нужно проставить уникальный ключ в объект Item item.
@@ -37,30 +37,45 @@ public class Tracker {
         return Arrays.copyOf(findByName, j);
     }
 
-    public Item findById(int id) { //получение заявки по id
-        Item rsl = null;
-        for (int index = 0; index < size; index++) {
-            Item item = items[index];
-            if (item.getId() == id) {
-                rsl = item;
-                break;
-            }
-        }
-        return rsl;
+    public Item findById(int id) { //для поиска по id,
+        /* Находим индекс */
+        int index = indexOf(id);
+        /* Если индекс найден возвращаем item, иначе null */
+        return index != -1 ? items[index] : null;
     }
 
     public Item findAll() { //получение списка всех заявок
-        Item[] findAll = new Item[items.length];
+        Item[] findAll = new Item[items.length];// Новый массив без null элементов
         int j = 0;
         for (int index = 0; index < size; index++) {
             Item item = items[index];
             if (item != null) {
                 findAll[j] = item;
                 j++;
-                break;
+
             }
         }
         return findAll[j];
+    }
+
+    public boolean replace(int id, Item item) { // метод добавить и искать заявки
+        if (findById(id) != null) {
+            item.setId(id); //
+            item.setName();
+            return true;
+
+        }
+    }
+
+    private int indexOf(int id) {
+        int rsl = -1;
+        for (int index = 0; index < size; index++) {
+            if (items[index].getId() == id) {
+                rsl = index;
+                break;
+            }
+        }
+        return rsl;
     }
 
 
