@@ -61,12 +61,11 @@ public class Tracker {
 
     public boolean replace(int id, Item item) { // метод добавить и искать заявки
         int index = indexOf(id);
-        if (index != -1) {
-            item.setId(id); //
+        boolean rsl = index != -1;
+        if (rsl) {
             items[index] = item;
-            return true;
         }
-        return false;
+        return rsl;
     }
 
     private int indexOf(int id) {
@@ -82,16 +81,17 @@ public class Tracker {
 
     public boolean delete(int id) {
         int index = indexOf(id);
+        boolean rsl = index != -1;
         int length = size - index;
         int distPos = index;
         int start = index + 1;
-        if (index != -1) {
+        if (rsl) {
             System.arraycopy (items,start,items,distPos,length);
             items[size - 1] = null;
             size--;
-            return true;
+
         }
-        return false;
+        return rsl;
     }
 
 
