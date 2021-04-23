@@ -7,13 +7,9 @@ import java.util.Scanner;
 public class StartUI {
     public static void main(String[] args) {
         Tracker tracker = new Tracker();
-        Item bug = new Item();
-        bug.setName("Bug");
+        Item bug = new Item("vi");
         tracker.add(bug);
-        int id = bug.getId();
-        Item bugWithDesc = new Item();
-        bugWithDesc.setName("Bug with description");
-        tracker.replace(id, bugWithDesc);
+        System.out.println(bug);
 
 
     }
