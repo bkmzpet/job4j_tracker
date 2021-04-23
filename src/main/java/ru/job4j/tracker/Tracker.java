@@ -11,7 +11,7 @@ import java.util.Arrays;
 
 public class Tracker {
     private final Item[] items = new Item[100]; // количество заявлений
-    private int ids = 1;//Поле ids используется для генерации нового ключа
+    private int ids = 1; //Поле ids используется для генерации нового ключа
     private int size = 0;
 
     public Item add(Item item) { // добавление заявок
@@ -45,7 +45,7 @@ public class Tracker {
     }
 
     public Item findAll() { //получение списка всех заявок
-        Item[] findAll = new Item[items.length];// Новый массив без null элементов
+        Item[] findAll = new Item[items.length]; // Новый массив без null элементов
         int j = 0;
         for (int index = 0; index < size; index++) {
             Item item = items[index];
@@ -83,7 +83,7 @@ public class Tracker {
         int index = indexOf(id);
         boolean rsl = index != -1;
         if (rsl) {
-            System.arraycopy (items,index + 1,items,index,size - index - 1);
+            System.arraycopy(items, index + 1, items, index, size - index - 1);
             items[size - 1] = null;
             size--;
 
