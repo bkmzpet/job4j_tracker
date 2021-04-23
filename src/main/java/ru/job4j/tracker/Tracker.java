@@ -80,6 +80,21 @@ public class Tracker {
         return rsl;
     }
 
+    public boolean delete(int id) {
+        int index = indexOf(id);
+        int length = size - index;
+        int distPos = index;
+        int start = index + 1;
+        if (index != -1) {
+            System.arraycopy (items,start,items,distPos,length);
+            items[size - 1] = null;
+            size--;
+            return true;
+        }
+        return false;
+    }
+
+
 }
 
 
