@@ -56,7 +56,7 @@ public class Tracker {
             }
         }
 
-        return findAll;
+        return Arrays.copyOf(findAll, j);
     }
 
     public boolean replace(int id, Item item) { // метод добавить и искать заявки
