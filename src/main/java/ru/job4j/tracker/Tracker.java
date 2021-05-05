@@ -45,8 +45,7 @@ public class Tracker {
     }
 
     public Item[] findAll() { //получение списка всех заявок
-        Item[] findAll = new Item[items.length]; // Новый массив без null элементов }
-        return Arrays.copyOf(findAll, size);
+        return Arrays.copyOf(items, size);
     }
 
     public boolean replace(int id, Item item) { // метод добавить и искать заявки
