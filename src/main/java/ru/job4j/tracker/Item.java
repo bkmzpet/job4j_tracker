@@ -41,6 +41,6 @@ public class Item { //Класс Item описывает модель заявл
         return "Item{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                '}';
+                "}";
     }
 }
