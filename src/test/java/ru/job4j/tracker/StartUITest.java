@@ -82,10 +82,11 @@ public class StartUITest {
     @Test
     public void whenShowAll() {
         Output out = new StubOutput();
-        Input in = new StubInput(
-                new String[]{"0", "1"}
-        );
         Tracker tracker = new Tracker();
+        Item item = tracker.add(new Item("Test"));
+        Input in = new StubInput(
+                new String[]{"0", Integer.toString(item.getId())}
+        );
         UserAction[] actions = {
                 new AllItemsAction(out),
                 new ExitAction()
@@ -96,6 +97,7 @@ public class StartUITest {
                         "0. Show all items" + System.lineSeparator() +
                         "1. Exit Program" + System.lineSeparator() +
                         "=== All items ====" + System.lineSeparator() +
+                        item + System.lineSeparator() +
                         "Menu." + System.lineSeparator() +
                         "0. Show all items" + System.lineSeparator() +
                         "1. Exit Program" + System.lineSeparator()
@@ -120,10 +122,7 @@ public class StartUITest {
                         "0. Find item by Id" + System.lineSeparator() +
                         "1. Exit Program" + System.lineSeparator() +
                         "=== Find item by Id ===" + System.lineSeparator() +
-                        "Item{"
-                        + "id=" + item.getId()
-                        + ", name='" + item.getName() + '\''
-                        + "}" + System.lineSeparator() +
+                        item + System.lineSeparator() +
                         "Menu." + System.lineSeparator() +
                         "0. Find item by Id" + System.lineSeparator() +
                         "1. Exit Program" + System.lineSeparator()
@@ -148,10 +147,7 @@ public class StartUITest {
                         "0. Find items by name" + System.lineSeparator() +
                         "1. Exit Program" + System.lineSeparator() +
                         "=== Find item by name ===" + System.lineSeparator() +
-                        "Item{"
-                        + "id=" + item.getId()
-                        + ", name='" + item.getName() + '\''
-                        + "}" + System.lineSeparator() +
+                        item + System.lineSeparator() +
                         "Menu." + System.lineSeparator() +
                         "0. Find items by name" + System.lineSeparator() +
                         "1. Exit Program" + System.lineSeparator()
