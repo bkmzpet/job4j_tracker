@@ -9,9 +9,10 @@ public class FindEl {
                 rsl = index;
                 break;
             }
-            if (rsl == -1) {
-                throw new ElementNotFoundException("Url could not be null");
-            }
+
+        }
+        if (rsl == -1) {
+            throw new ElementNotFoundException("Url could not be null");
         }
         return rsl;
     }
@@ -19,7 +20,7 @@ public class FindEl {
     public static void main(String[] args) throws ElementNotFoundException {
         String[] list = {"df", "fdf"};
         try {
-            indexOf(list, "fdf");
+            indexOf(list, "fdfd");
         } catch (ElementNotFoundException e) {
             e.printStackTrace();
         }
