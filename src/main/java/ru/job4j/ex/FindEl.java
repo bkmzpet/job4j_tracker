@@ -7,11 +7,14 @@ public class FindEl {
         for (int index = 0; index < value.length; index++) {
             if (value[index].equals(key)) {
                 rsl = index;
+                if (rsl == -1) {
+                    throw new ElementNotFoundException("Url could not be null");
+                }
+
                 break;
             }
         }
         return rsl;
-
     }
 
     public static void main(String[] args) throws ElementNotFoundException {
