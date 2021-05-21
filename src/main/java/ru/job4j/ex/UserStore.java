@@ -1,13 +1,13 @@
 package ru.job4j.ex;
 
 public class UserStore {
-    public static User[] findUser(User[] users, String login)
+    public static User findUser(User[] users, String login)
             throws UserNotFoundException {
         User result;
         result = null;
-        for (int index = 0; index < users.length; index++) {
+        for (User user : users) {
             if (user.getUsername().equals(login)) {
-                users[index] = result;
+                result = user;
                 break;
             }
 
@@ -15,7 +15,7 @@ public class UserStore {
         if (result == null) {
             throw new UserNotFoundException("пользователя не найдено");
         }
-        return new User[]{result};
+        return result;
     }
 
     public static boolean validate(User user) throws UserInvalidException {
@@ -26,17 +26,19 @@ public class UserStore {
 
     }
 
-    public static void main(String[] args) throws UserNotFoundException {
+    public static void main(String[] args) {
         User[] users = {
-                new User("Petr Arsentev", true)
+                new User("Petr Arsentev", false)
         };
         try {
-            findUser(users, "df");
+            findUser(users, "Petr Arsentev");
             validate(users[0]);
         } catch (UserInvalidException ea) {
             ea.printStackTrace();
-        } catch (ElementNotFoundException en) {
-            en.printStackTrace();
+
+        } catch (UserNotFoundException e) {
+            e.printStackTrace();
         }
     }
 }
+
